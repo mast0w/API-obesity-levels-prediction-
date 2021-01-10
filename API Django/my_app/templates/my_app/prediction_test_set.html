@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <style>
+            body{
+                background-color: #cacaca;
+            }
+            div{
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 25px 200px;
+            cursor: pointer;
+            }
+    </style>
+    </head> 
+    <body >
+
+        <div  class="text-center">
+            <h1 >RESULTS</h1>
+
+        </br>  </br>
+            <h3>Legend</h3>
+            <table class="table table-striped table-dark">
+                
+
+                <tr>
+
+                    <td>FAVC</td> 
+                    <td>FCVC</td> 
+                    <td>NCP</td> 
+                    <td>CAEC</td> 
+                    <td>CH2O</td> 
+                    <td>SCC</td> 
+                    <td>FAF</td> 
+                    <td>TUE</td> 
+                    <td>CALC</td> 
+                </tr>
+
+                <tr>
+                    <td>Frequent consumption of high caloric food</td> 
+                    <td>Frequency of consumption of vegetable</td> 
+                    <td>Number of main meals</td> 
+                    <td>Consumption of food between meals</td> 
+                    <td>Consumption of water daily</td> 
+                    <td>Calories consumption monitoring </td> 
+                    <td>Physical activity frequency</td> 
+                    <td>Time using technology devices</td> 
+                    <td>Consumption of alcohol </td> 
+                </tr>
+            </table>
+            </div>
+            </br>
+            </br>
+
+
+        </div>
+
+            <table class="table table-dark table-striped"> 
+            <pead> 
+                <tr> 
+                <th>Age</th> 
+                <th>family_history_with_overweight</th> 
+                <th>FAVC</th> 
+                <th>FCVC</th> 
+                <th>NCP</th> 
+                <th>CAEC</th> 
+                <th>SMOKE</th> 
+                <th>CH2O</th> 
+                <th>SCC</th> 
+                <th>FAF</th> 
+                <th>TUE</th> 
+                <th>CALC</th> 
+                <th>Male</th> 
+                <th>Female</th> 
+                <th>Walking</th> 
+                <th>Motorbike</th> 
+                <th>Public Transports</th> 
+                <th>Automobile</th> 
+
+                <th bgcolor="#333333">Prediction</th> 
+
+                </tr> 
+            </thead> 
+            <tbody> 
+            <!-- jinja2 Technique -->
+            {% if data %}   
+            {% for i in data %} 
+                <tr> 
+                    <td>{{i.Age}}</td> 
+                    <td>{{i.family_history_with_overweight}}</td> 
+                    <td>{{i.FAVC}}</td> 
+                    <td>{{i.FCVC}}</td> 
+                    <td>{{i.NCP}}</td> 
+                    <td>{{i.CAEC}}</td> 
+                    <td>{{i.SMOKE}}</td> 
+                    <td>{{i.CH2O}}</td> 
+                    <td>{{i.SCC}}</td> 
+                    <td>{{i.FAF}}</td> 
+                    <td>{{i.TUE}}</td> 
+                    <td>{{i.CALC}}</td> 
+                    <td>{{i.Male}}</td> 
+                    <td>{{i.Female}}</td> 
+                    <td>{{i.Walking}}</td> 
+                    <td>{{i.Motorbike }}</td> 
+                    <td>{{i.Public_Transportation }}</td> 
+                    <td>{{i.Automobile }}</td> 
+                    <!-- <td>{{i.Bike }}</td>  -->
+
+                    {% if i.Prediction == "Obesity_Type_III" %}
+                    <td bgcolor="#FF0000">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Obesity_Type_II" %}
+                    <td bgcolor="#B43104">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Obesity_Type_II" %}
+                    <td bgcolor="#B45F04">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Obesity_Type_I" %}
+                    <td bgcolor="#B18904">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Overweight_Level_III" %}
+                    <td bgcolor="#AEB404">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Overweight_Level_II" %}
+                    <td bgcolor="#86B404">{{i.Prediction}}</td>
+                    {% elif  i.Prediction == "Overweight_Level_I" %}
+                    <td bgcolor="5FB404">{{i.Prediction}}</td>
+                    {% else %}
+                    <td bgcolor="#01DF3A">{{i.Prediction}}</td>
+                    {% endif %}
+
+                </tr> 
+            {% endfor %} 
+            {% endif %} 
+            </tbody> 
+            </table> 
+    </body>
+</html>
+

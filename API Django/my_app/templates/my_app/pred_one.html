@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <style>
+            body{
+            background-color: #cacaca;
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 25px 200px;
+            cursor: pointer;
+          }
+        </style>
+    </head> 
+    <body>
+
+        <h1 class="text-center" >Obesity Form</h1>
+
+        </br></br>
+
+        <h3>Legend</h3>
+
+        <table class="table table-striped table-dark">
+            
+            <thead class="thead-light">
+            <tr>
+
+                <td>FAVC</td> 
+                <td>FCVC</td> 
+                <td>NCP</td> 
+                <td>CAEC</td> 
+                <td>CH2O</td> 
+                <td>SCC</td> 
+                <td>FAF</td> 
+                <td>TUE</td> 
+                <td>CALC</td> 
+            </tr>
+            </thead>
+
+            <tr>
+                <td>Frequent consumption of high caloric food </td> 
+                <td>Frequency of consumption of vegetable - input : float</td> 
+                <td>Number of main meals - input : integer</td> 
+                <td>Consumption of food between meals - input : integer </td> 
+                <td>Consumption of water daily (L) - input : float</td> 
+                <td>Calories consumption monitoring - input : float</td> 
+                <td>Physical activity frequency - input : float</td> 
+                <td>Time using technology devices - input : float</td> 
+                <td>Consumption of alcohol - input : no = 0, sometimes = 1, frequently = 2, always = 3</td> 
+            </tr>
+        </table>
+        </br>
+        </br>
+
+        <form action="/pred_one_result/" method="post">
+            <p>For Male,Female, Walking, Motorbike, Public_Transportation, Automobile and Bike fields, fill with <strong> 0 or 1</strong> </p></br>
+
+            {% csrf_token %}
+            {{form.as_p }}
+            
+            <input type="submit" value="OK">
+        </form>
+    </body>
+</html>
+
