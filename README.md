@@ -1,5 +1,5 @@
 # API-obesity-levels-prediction-
-Report of project during the course Python for data analysis at ESILV (M2)
+Report of project with ALBERIC DUFAURE during the course Python for data analysis at ESILV (M2)
 
 The purpose of this project was to create an intelligent tool to identify obesity levels. 
 
@@ -14,3 +14,7 @@ Our solution is an API which runs a Random Forest Classifier (best model found) 
 In this repository you can find :
 -Our notebook to find the best model & see data visualisation
 -Source code of Django API
+
+To run the API place your terminal in the folder of script 'manage.py' and enter 'python manage.py runserver' (windows). You may need to install depencies.
+
+You can also find screens of the api in our presentation pdf.
